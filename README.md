@@ -1,3 +1,6 @@
-# MindGuard – Privacy Policy
+# ONSK – website & privacy policies
 
-Public privacy policy of the MindGuard Android app (com.onsk.pureweb), published via GitHub Pages.
+Published at https://ondy27.github.io/mindguard-privacy/ (Google Play privacy policy URL for MindGuard).
+
+`index.html` is generated: `python build_site.py <path>/docs/privacy-policy.md site_template.html index.html`.
+Fonts: IBM Plex Sans (SIL OFL, see `assets/fonts/OFL.txt`).
