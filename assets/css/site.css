@@ -1,0 +1,133 @@
+/* Wickroot web · navrženo na plátně Claude Design „Wickroot · web“, varianta B */
+@font-face {
+  font-family: 'Hanken Grotesk';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(../fonts/HankenGrotesk-400-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Hanken Grotesk';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(../fonts/HankenGrotesk-400-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Hanken Grotesk';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(../fonts/HankenGrotesk-600-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Hanken Grotesk';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(../fonts/HankenGrotesk-600-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Hanken Grotesk';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(../fonts/HankenGrotesk-700-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Hanken Grotesk';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(../fonts/HankenGrotesk-700-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(../fonts/IBMPlexMono-500-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(../fonts/IBMPlexMono-500-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Instrument Serif';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url(../fonts/InstrumentSerif-400i-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Instrument Serif';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url(../fonts/InstrumentSerif-400i-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Instrument Serif';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(../fonts/InstrumentSerif-400-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Instrument Serif';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(../fonts/InstrumentSerif-400-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+body{margin:0;background:#F2EFE7}
+a{color:#15161A;text-decoration:none}a:hover{color:#2B55E6}
+.fade{opacity:0;animation:rise 1s cubic-bezier(.2,.7,.2,1) forwards}
+.d1{animation-delay:.1s}.d2{animation-delay:.25s}.d3{animation-delay:.4s}.d4{animation-delay:.6s}
+@keyframes rise{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:none}}
+.flame{transform-box:fill-box;transform-origin:50% 100%;animation:flick 2.6s ease-in-out infinite}
+@keyframes flick{0%,100%{transform:scale(1,1) rotate(0)}30%{transform:scale(.93,1.07) rotate(-3deg)}62%{transform:scale(1.05,.95) rotate(2deg)}}
+.root{stroke-dasharray:2400;stroke-dashoffset:2400;animation:draw 3.2s .5s cubic-bezier(.4,0,.2,1) forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+.ul{background:linear-gradient(#2B55E6,#2B55E6) left bottom/0 2px no-repeat;transition:background-size .35s}
+.ul:hover{background-size:100% 2px}
+.prow{position:relative;transition:padding .35s cubic-bezier(.2,.7,.2,1)}
+.prow:hover{padding-left:20px}
+.prow .peek{opacity:0;transform:translateY(16px) rotate(3deg);transition:opacity .35s,transform .45s cubic-bezier(.2,.7,.2,1);pointer-events:none}
+.prow:hover .peek{opacity:1;transform:translateY(-50%) rotate(-3deg)}
+.prow .go{transition:transform .35s,background .35s,color .35s}
+.prow:hover .go{transform:rotate(-45deg);background:#15161A;color:#F2EFE7}
+.fan img{transition:transform .6s cubic-bezier(.2,.7,.2,1)}
+.fan:hover .f1{transform:translateX(-120px) rotate(-10deg)}
+.fan:hover .f3{transform:translateX(120px) rotate(10deg)}
+.fig img{transition:transform 1.2s cubic-bezier(.2,.7,.2,1)}
+.fig:hover img{transform:scale(1.03)}
+@media (max-width:760px){.prow{grid-template-columns:36px minmax(0,1fr) 52px !important;gap:14px !important}.prow .hide{display:none}.prow .peek{display:none}}
+@media (prefers-reduced-motion: reduce){.fade{opacity:1;animation:none}.flame{animation:none}.root{animation:none;stroke-dashoffset:0}}
+.doc{transition:background .25s,padding .25s}
+.doc:hover{background:#E8E3D7;padding-left:18px}
+.toc a{transition:color .2s,padding .2s}
+.toc a:hover{color:#2B55E6;padding-left:6px}
+.prose h2{font-family:'Instrument Serif',serif;font-weight:400;font-size:38px;letter-spacing:-.01em;margin:56px 0 14px}
+.prose p{margin:0 0 14px}
+.prose ul{margin:0 0 14px;padding-left:22px}
+.prose li{margin:0 0 8px}
+html{scroll-behavior:smooth}
+*{box-sizing:border-box}
+img{max-width:100%}
+:focus-visible{outline:3px solid #2B55E6;outline-offset:3px}
