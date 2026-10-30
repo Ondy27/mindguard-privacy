@@ -118,10 +118,12 @@ a{color:#15161A;text-decoration:none}a:hover{color:#2B55E6}
 .shots{display:flex;gap:18px;align-items:flex-start}
 .shot{transition:transform .5s cubic-bezier(.2,.7,.2,1),box-shadow .5s}
 .shot:hover{transform:translateY(-14px) rotate(-1.5deg);box-shadow:0 34px 60px -24px rgba(21,22,26,.5)}
+.bob{animation:bob 3.2s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(-10px)}}
 .fig img{transition:transform 1.2s cubic-bezier(.2,.7,.2,1)}
-.fig:hover img{transform:scale(1.03)}
+.fig:hover > img:first-child{transform:scale(1.03)}
 @media (max-width:760px){.prow{grid-template-columns:36px minmax(0,1fr) 52px !important;gap:14px !important}.prow .hide{display:none}.prow .peek{display:none}}
-@media (prefers-reduced-motion: reduce){.fade{opacity:1;animation:none}.flame{animation:none}.root{animation:none;stroke-dashoffset:0}}
+@media (prefers-reduced-motion: reduce){.fade{opacity:1;animation:none}.flame,.bob{animation:none}.root{animation:none;stroke-dashoffset:0}}
 .doc{transition:background .25s,padding .25s}
 .doc:hover{background:#E8E3D7;padding-left:18px}
 .toc a{transition:color .2s,padding .2s}
