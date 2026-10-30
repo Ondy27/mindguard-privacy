@@ -115,6 +115,9 @@ a{color:#15161A;text-decoration:none}a:hover{color:#2B55E6}
 .fan img{transition:transform .6s cubic-bezier(.2,.7,.2,1)}
 .fan:hover .f1{transform:translateX(-120px) rotate(-10deg)}
 .fan:hover .f3{transform:translateX(120px) rotate(10deg)}
+.shots{display:flex;gap:18px;align-items:flex-start}
+.shot{transition:transform .5s cubic-bezier(.2,.7,.2,1),box-shadow .5s}
+.shot:hover{transform:translateY(-14px) rotate(-1.5deg);box-shadow:0 34px 60px -24px rgba(21,22,26,.5)}
 .fig img{transition:transform 1.2s cubic-bezier(.2,.7,.2,1)}
 .fig:hover img{transform:scale(1.03)}
 @media (max-width:760px){.prow{grid-template-columns:36px minmax(0,1fr) 52px !important;gap:14px !important}.prow .hide{display:none}.prow .peek{display:none}}
