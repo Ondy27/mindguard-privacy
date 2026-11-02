@@ -241,8 +241,10 @@ document.querySelectorAll('.fan').forEach(function (fan) {
   fan.addEventListener('mouseleave', function () { fan.querySelectorAll('.card').forEach(function (c) { delete c.dataset.wait; }); });
 });
 </script>
+<div class="mascot" aria-hidden="true"><div class="mascot-tilt"><div class="bob"><svg viewBox="-8 -12 104 112" width="92" height="99"><g fill="none" stroke-linecap="round" stroke-linejoin="round"><path class="m-ink" d="M6 34 C11 50 17 66 24 78 C30 66 37 54 44 46 C51 54 58 66 64 78 C71 66 77 50 82 34" stroke-width="10"></path><path class="m-ink" d="M24 78 C24 86 20 90 12 95 M24 78 C25 87 30 91 36 95 M64 78 C63 87 58 91 52 95 M64 78 C64 86 68 90 76 95" stroke-width="4.5"></path></g><g class="flame"><path class="m-flame" d="M44 -6 C52 5 56 12 56 20 C56 28 51 32 44 32 C37 32 32 28 32 20 C32 12 36 5 44 -6 Z"></path></g><g class="m-eyes" fill="#FFFFFF"><ellipse cx="40" cy="21" rx="1.8" ry="2.6"></ellipse><ellipse cx="48" cy="21" rx="1.8" ry="2.6"></ellipse></g></svg></div></div></div>
 <script src="assets/js/gsap.min.js"></script>
 <script src="assets/js/ScrollTrigger.min.js"></script>
+<script src="assets/js/MotionPathPlugin.min.js"></script>
 <script src="assets/js/lenis.min.js"></script>
 <script src="assets/js/motion.js"></script>
 <script src="assets/js/lightbox.js"></script>

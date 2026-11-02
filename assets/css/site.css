@@ -185,3 +185,15 @@ html.lb-open{overflow:hidden}
 @keyframes lb-fade-out{to{opacity:0}}
 @media (max-width:640px){.lb-bar,.lb-foot{padding:16px}.lb-nav{gap:18px}.lb-stage{padding:16px}.lb-hint{display:none}}
 @media (prefers-reduced-motion: reduce){.lb::backdrop,.lb-bar,.lb-foot{animation:none}.lb-img,.lb-img.swap{transition:none}}
+/* maskot Wicky, který přelétá stránkou (assets/js/motion.js) */
+.mascot{position:absolute;top:0;left:0;z-index:40;pointer-events:none;display:none}
+html.motion .mascot{display:block}
+.mascot svg{display:block;overflow:visible;filter:drop-shadow(0 0 14px rgba(43,85,230,.35))}
+.mascot .m-ink{stroke:#15161A;transition:stroke .5s}
+.mascot .m-flame{fill:#2B55E6;transition:fill .5s}
+.mascot.on-dark .m-ink{stroke:#F2EFE7}
+.mascot.on-dark .m-flame{fill:#5C8BFF}
+.mascot .m-eyes{transform-box:fill-box;transform-origin:center;animation:blink 5s infinite}
+@keyframes blink{0%,44%,48%,100%{transform:scaleY(1)}46%{transform:scaleY(.1)}}
+@media (max-width:1023px){.mascot svg{width:64px;height:69px}}
+body{overflow-x:clip}
