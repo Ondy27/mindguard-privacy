@@ -21,6 +21,7 @@
 </script>
 </head>
 <body>
+<div class="progress" aria-hidden="true"></div>
 <div style="background:#F2EFE7;color:#15161A;font-family:'Hanken Grotesk',system-ui,sans-serif;overflow:hidden">
 
 <header style="max-width:1320px;margin:0 auto;padding:26px 40px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:20px;border-bottom:1px solid #D9D4C7">
@@ -36,6 +37,8 @@
 </header>
 
 <section id="top" style="max-width:1320px;margin:0 auto;padding:80px 40px 40px;position:relative">
+<div class="hero-inner">
+<div class="hero-head">
 <h1 class="fade d1" style="margin:0;font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(56px,9vw,148px);line-height:.92;letter-spacing:-.025em;max-width:1200px">We grow small, <em style="color:#2B55E6">honest</em> software and one hand‑drawn game.</h1>
 <div class="fade d2" style="margin-top:56px;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:24px;border-top:1px solid #15161A;padding-top:20px">
 <div><p style="margin:0 0 6px;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.1em;color:#5A5C63">STUDIO</p><p style="margin:0;font-size:18px;font-weight:600">Wickroot</p></div>
@@ -43,20 +46,24 @@
 <div><p style="margin:0 0 6px;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.1em;color:#5A5C63">WHERE</p><p style="margin:0;font-size:18px;font-weight:600">Google Play and PC</p></div>
 <div><p style="margin:0 0 6px;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.1em;color:#5A5C63">PRINCIPLE</p><p style="margin:0;font-size:18px;font-weight:600">No ads, no tracking</p></div>
 </div>
+</div>
 <svg aria-hidden="true" viewBox="0 0 1240 120" preserveAspectRatio="none" style="display:block;width:100%;height:110px;margin-top:40px"><path class="root" d="M0 60 C120 60 160 20 260 30 C360 40 380 96 500 90 C600 84 640 40 740 44 C840 48 860 100 980 96 C1080 92 1120 58 1240 60 M260 30 C280 4 320 0 340 6 M500 90 C520 112 560 118 590 112 M980 96 C1000 116 1040 120 1060 114" fill="none" stroke="#15161A" stroke-width="2.5" stroke-linecap="round"></path></svg>
+<div class="hero-media">
 <figure class="fade d3 fig" style="margin:16px 0 0;border-radius:20px;overflow:hidden;position:relative;aspect-ratio:16/7;background:#1d2a24">
 <img src="assets/img/mosswarden-forest.jpg" alt="The Last Mosswarden: a forest at dusk with a corrupted purple tree" style="width:100%;height:100%;object-fit:cover;display:block">
 <figcaption style="position:absolute;left:24px;bottom:22px;display:flex;align-items:center;gap:12px;background:#F2EFE7;border-radius:999px;padding:10px 18px 10px 10px;font-size:15px;font-weight:600"><img src="assets/img/mosswarden-icon.png" alt="" aria-hidden="true" style="width:34px;height:34px;border-radius:9px">The Last Mosswarden · in development</figcaption>
 </figure>
+</div>
+</div>
 </section>
 
 <section id="projects" style="max-width:1320px;margin:0 auto;padding:120px 40px 40px">
-<div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:20px;margin-bottom:24px">
+<div data-reveal style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:20px;margin-bottom:24px">
 <h2 style="margin:0;font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(44px,5.5vw,84px);letter-spacing:-.02em">Projects</h2>
 <p style="margin:0;font-family:'IBM Plex Mono',monospace;font-size:13px;color:#5A5C63">04 ITEMS · HOVER TO PEEK</p>
 </div>
 <div style="border-top:1px solid #15161A">
-<a class="prow" href="#mindguard" style="display:grid;grid-template-columns:60px minmax(0,1.2fr) minmax(0,2fr) 140px 56px;align-items:center;gap:24px;padding:34px 0;border-bottom:1px solid #D9D4C7">
+<a class="prow" data-reveal href="#mindguard" style="display:grid;grid-template-columns:60px minmax(0,1.2fr) minmax(0,2fr) 140px 56px;align-items:center;gap:24px;padding:34px 0;border-bottom:1px solid #D9D4C7">
 <span style="font-family:'IBM Plex Mono',monospace;color:#5A5C63">01</span>
 <span style="font-family:'Instrument Serif',serif;font-size:48px;line-height:1">MindGuard</span>
 <span class="hide" style="color:#5A5C63;font-size:17px;line-height:1.5">Blocks adult content, counts clean days and helps through cravings with breathing and meditation.</span>
@@ -64,7 +71,7 @@
 <span class="go" aria-hidden="true" style="width:52px;height:52px;border-radius:50%;border:1.5px solid #15161A;display:flex;align-items:center;justify-content:center;font-size:20px">→</span>
 <img class="peek" src="assets/img/mg-screen-1.jpg" alt="" aria-hidden="true" style="position:absolute;right:120px;top:50%;width:150px;border-radius:18px;box-shadow:0 20px 40px -12px rgba(21,22,26,.35)">
 </a>
-<a class="prow" href="#streakly" style="display:grid;grid-template-columns:60px minmax(0,1.2fr) minmax(0,2fr) 140px 56px;align-items:center;gap:24px;padding:34px 0;border-bottom:1px solid #D9D4C7">
+<a class="prow" data-reveal href="#streakly" style="display:grid;grid-template-columns:60px minmax(0,1.2fr) minmax(0,2fr) 140px 56px;align-items:center;gap:24px;padding:34px 0;border-bottom:1px solid #D9D4C7">
 <span style="font-family:'IBM Plex Mono',monospace;color:#5A5C63">02</span>
 <span style="font-family:'Instrument Serif',serif;font-size:48px;line-height:1">Streakly</span>
 <span class="hide" style="color:#5A5C63;font-size:17px;line-height:1.5">A habit tracker built on streaks, with your own habits, daily check‑ins and clear stats.</span>
@@ -72,7 +79,7 @@
 <span class="go" aria-hidden="true" style="width:52px;height:52px;border-radius:50%;border:1.5px solid #15161A;display:flex;align-items:center;justify-content:center;font-size:20px">→</span>
 <img class="peek" src="assets/img/streakly-home.jpg" alt="" aria-hidden="true" style="position:absolute;right:120px;top:50%;width:150px;border-radius:18px;box-shadow:0 20px 40px -12px rgba(21,22,26,.35)">
 </a>
-<a class="prow" href="#maturitko" style="display:grid;grid-template-columns:60px minmax(0,1.2fr) minmax(0,2fr) 140px 56px;align-items:center;gap:24px;padding:34px 0;border-bottom:1px solid #D9D4C7">
+<a class="prow" data-reveal href="#maturitko" style="display:grid;grid-template-columns:60px minmax(0,1.2fr) minmax(0,2fr) 140px 56px;align-items:center;gap:24px;padding:34px 0;border-bottom:1px solid #D9D4C7">
 <span style="font-family:'IBM Plex Mono',monospace;color:#5A5C63">03</span>
 <span style="font-family:'Instrument Serif',serif;font-size:48px;line-height:1">Maturitko</span>
 <span class="hide" style="color:#5A5C63;font-size:17px;line-height:1.5">Short daily lessons for the Czech maturita exam: 15 subjects, 243 topics in three depths.</span>
@@ -80,7 +87,7 @@
 <span class="go" aria-hidden="true" style="width:52px;height:52px;border-radius:50%;border:1.5px solid #15161A;display:flex;align-items:center;justify-content:center;font-size:20px">→</span>
 <img class="peek" src="assets/img/mat-path.jpg" alt="" aria-hidden="true" style="position:absolute;right:120px;top:50%;width:150px;border-radius:18px;box-shadow:0 20px 40px -12px rgba(21,22,26,.35)">
 </a>
-<a class="prow" href="#mosswarden" style="display:grid;grid-template-columns:60px minmax(0,1.2fr) minmax(0,2fr) 140px 56px;align-items:center;gap:24px;padding:34px 0;border-bottom:1px solid #D9D4C7">
+<a class="prow" data-reveal href="#mosswarden" style="display:grid;grid-template-columns:60px minmax(0,1.2fr) minmax(0,2fr) 140px 56px;align-items:center;gap:24px;padding:34px 0;border-bottom:1px solid #D9D4C7">
 <span style="font-family:'IBM Plex Mono',monospace;color:#5A5C63">04</span>
 <span style="font-family:'Instrument Serif',serif;font-size:48px;line-height:1">The Last Mosswarden</span>
 <span class="hide" style="color:#5A5C63;font-size:17px;line-height:1.5">A hand‑drawn 2.5D action adventure across five worlds of Eldoria.</span>
@@ -92,12 +99,12 @@
 </section>
 
 <section id="mindguard" style="max-width:1320px;margin:0 auto;padding:120px 40px 20px;display:flex;flex-wrap:wrap;gap:72px;align-items:center">
-<div class="fan" style="flex:1 1 440px;min-width:0;position:relative;height:520px;display:flex;justify-content:center;align-items:center">
+<div class="fan" data-par="110" style="flex:1 1 440px;min-width:0;position:relative;height:520px;display:flex;justify-content:center;align-items:center">
 <img class="card pl" src="assets/img/mg-screen-2.jpg" alt="MindGuard statistics screen">
 <img class="card pr" src="assets/img/mg-screen-4.jpg" alt="MindGuard awards screen">
 <img class="card pc" src="assets/img/mg-screen-1.jpg" alt="MindGuard home screen">
 </div>
-<div style="flex:1 1 380px;min-width:0;max-width:500px">
+<div data-par="-110" style="flex:1 1 380px;min-width:0;max-width:500px">
 <div style="display:flex;align-items:center;gap:14px;margin-bottom:20px"><img src="assets/img/mindguard-icon.png" alt="" aria-hidden="true" style="width:52px;height:52px;border-radius:14px"><span style="font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.08em;color:#5A5C63">MINDGUARD · CONTENT BLOCKER</span></div>
 <h2 style="margin:0 0 20px;font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(44px,5vw,76px);line-height:1;letter-spacing:-.02em">One day <em style="color:#2B55E6">at a time.</em></h2>
 <p style="margin:0 0 28px;font-size:18px;line-height:1.6;color:#5A5C63">MindGuard blocks adult websites in your browser, counts your clean days and helps you through cravings with a panic button, breathing and meditation. Your streak and settings stay on your phone.</p>
@@ -106,13 +113,13 @@
 </section>
 
 <section id="streakly" style="max-width:1320px;margin:0 auto;padding:110px 40px 20px;display:flex;flex-wrap:wrap;gap:56px;align-items:center">
-<div style="flex:1 1 340px;min-width:0;max-width:440px">
+<div data-par="-90" style="flex:1 1 340px;min-width:0;max-width:440px">
 <div style="display:flex;align-items:center;gap:14px;margin-bottom:20px"><img src="assets/img/streakly-icon.png" alt="" aria-hidden="true" style="width:52px;height:52px;border-radius:14px;background:#FFFFFF"><span style="font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.08em;color:#5A5C63">STREAKLY · HABIT TRACKER</span></div>
 <h2 style="margin:0 0 20px;font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(44px,5vw,76px);line-height:1;letter-spacing:-.02em">Keep the streak <em style="color:#2B55E6">going.</em></h2>
 <p style="margin:0 0 28px;font-size:18px;line-height:1.6;color:#5A5C63">Add a habit, choose how often (daily, weekly, monthly, on chosen days or every few days) and tick it off. Weekly and monthly stats show how you are doing, and you can pick your own colour.</p>
 <a class="ul" href="https://play.google.com/store/apps/details?id=com.onsk.streakly" style="font-weight:700;font-size:18px">Get Streakly on Google Play →</a>
 </div>
-<div style="flex:2 1 560px;min-width:0;overflow-x:auto;padding:30px 4px 40px">
+<div data-par="130" style="flex:2 1 560px;min-width:0;overflow-x:auto;padding:30px 4px 40px">
 <div class="shots">
 <img class="shot" src="assets/img/streakly-home.jpg" alt="Streakly home screen with today's habits" style="width:164px;flex:0 0 auto;border-radius:20px;border:5px solid #15161A">
 <img class="shot" src="assets/img/streakly-new-task.jpg" alt="Streakly new task screen with weekly schedule" style="width:164px;flex:0 0 auto;border-radius:20px;border:5px solid #15161A;margin-top:56px">
@@ -123,12 +130,12 @@
 </section>
 
 <section id="maturitko" style="max-width:1320px;margin:0 auto;padding:120px 40px 20px;display:flex;flex-wrap:wrap;gap:72px;align-items:center">
-<div class="fan" style="flex:1 1 440px;min-width:0;position:relative;height:540px;display:flex;justify-content:center;align-items:center">
+<div class="fan" data-par="110" style="flex:1 1 440px;min-width:0;position:relative;height:540px;display:flex;justify-content:center;align-items:center">
 <img class="card pl" src="assets/img/mat-summary.jpg" alt="Maturitko lesson intro with the key rules in brief">
 <img class="card pr" src="assets/img/mat-lesson.jpg" alt="Maturitko exercise answered correctly, with an explanation">
 <img class="card pc" src="assets/img/mat-path.jpg" alt="Maturitko learning path with lessons for the spelling unit">
 </div>
-<div style="flex:1 1 380px;min-width:0;max-width:500px">
+<div data-par="-110" style="flex:1 1 380px;min-width:0;max-width:500px">
 <div style="display:flex;align-items:center;gap:14px;margin-bottom:20px"><img src="assets/img/maturitko-icon.png" alt="" aria-hidden="true" style="width:52px;height:52px;border-radius:14px;background:#FFFFFF"><span style="font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.08em;color:#5A5C63">MATURITKO · <span style="color:#B5481A">COMING SOON</span></span></div>
 <h2 style="margin:0 0 20px;font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(44px,5vw,76px);line-height:1;letter-spacing:-.02em">Ready for the <em style="color:#2B55E6">maturita.</em></h2>
 <p style="margin:0 0 24px;font-size:18px;line-height:1.6;color:#5A5C63">Short daily lessons for Czech students preparing for the maturita exam. Every topic is explained in three depths, from a quick summary to the full detail, with practice and instant feedback.</p>
@@ -138,9 +145,9 @@
 </div>
 </section>
 
-<section id="mosswarden" style="background:#15161A;color:#F2EFE7;margin-top:120px;overflow:hidden">
+<section id="mosswarden" style="background:#15161A;color:#F2EFE7;margin-top:120px;overflow:hidden;position:relative;z-index:2">
 <div style="max-width:1320px;margin:0 auto;padding:110px 40px 64px;display:flex;flex-wrap:wrap;gap:56px;align-items:center">
-<div style="flex:1 1 420px;min-width:0;max-width:540px">
+<div data-reveal style="flex:1 1 420px;min-width:0;max-width:540px">
 <div style="display:flex;align-items:center;gap:14px;margin-bottom:20px"><img src="assets/img/mosswarden-icon.png" alt="" aria-hidden="true" style="width:52px;height:52px;border-radius:14px"><span style="font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.08em;color:#A9A49A">THE LAST MOSSWARDEN · PC GAME · <span style="color:#9BE07A">IN DEVELOPMENT</span></span></div>
 <h2 style="margin:0 0 22px;font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(48px,5.5vw,84px);line-height:.98;letter-spacing:-.02em">Free the Guardians. <em style="color:#8FAEFF">Stop Morgrath.</em></h2>
 <p style="margin:0 0 34px;font-size:18px;line-height:1.6;color:#C9C4B8">A hand‑drawn 2.5D action adventure. Travel through five worlds of Eldoria, free the captured Guardians, collect weapons and spells, and face the dark mage Morgrath.</p>
@@ -176,19 +183,19 @@
 </section>
 
 <section id="studio" style="max-width:1320px;margin:0 auto;padding:120px 40px;display:flex;flex-wrap:wrap;gap:56px;align-items:flex-start">
-<div style="flex:1 1 380px;min-width:0">
+<div class="studio-head" style="flex:1 1 380px;min-width:0">
 <p style="margin:0 0 20px;font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.08em;color:#5A5C63">HOW WE WORK</p>
 <h2 style="margin:0;font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(44px,5vw,76px);line-height:1;letter-spacing:-.02em">Built to help, <em style="color:#2B55E6">not to hook.</em></h2>
 </div>
 <ol style="flex:1 1 480px;min-width:0;margin:0;padding:0;list-style:none;display:grid;gap:26px">
-<li style="display:grid;grid-template-columns:44px 1fr;gap:12px;border-top:1px solid #D9D4C7;padding-top:20px"><span style="font-family:'IBM Plex Mono',monospace;color:#2B55E6">i.</span><span style="font-size:18px;line-height:1.55"><b>Your data stays with you.</b> MindGuard, Streakly and Maturitko keep what you enter on your own phone.</span></li>
-<li style="display:grid;grid-template-columns:44px 1fr;gap:12px;border-top:1px solid #D9D4C7;padding-top:20px"><span style="font-family:'IBM Plex Mono',monospace;color:#2B55E6">ii.</span><span style="font-size:18px;line-height:1.55"><b>No ads, no tracking.</b> We don't sell attention and we don't follow you around.</span></li>
-<li style="display:grid;grid-template-columns:44px 1fr;gap:12px;border-top:1px solid #D9D4C7;padding-top:20px"><span style="font-family:'IBM Plex Mono',monospace;color:#2B55E6">iii.</span><span style="font-size:18px;line-height:1.55"><b>Small on purpose.</b> One small studio that builds slowly and with care.</span></li>
+<li data-reveal style="display:grid;grid-template-columns:44px 1fr;gap:12px;border-top:1px solid #D9D4C7;padding-top:20px"><span style="font-family:'IBM Plex Mono',monospace;color:#2B55E6">i.</span><span style="font-size:18px;line-height:1.55"><b>Your data stays with you.</b> MindGuard, Streakly and Maturitko keep what you enter on your own phone.</span></li>
+<li data-reveal style="display:grid;grid-template-columns:44px 1fr;gap:12px;border-top:1px solid #D9D4C7;padding-top:20px"><span style="font-family:'IBM Plex Mono',monospace;color:#2B55E6">ii.</span><span style="font-size:18px;line-height:1.55"><b>No ads, no tracking.</b> We don't sell attention and we don't follow you around.</span></li>
+<li data-reveal style="display:grid;grid-template-columns:44px 1fr;gap:12px;border-top:1px solid #D9D4C7;padding-top:20px"><span style="font-family:'IBM Plex Mono',monospace;color:#2B55E6">iii.</span><span style="font-size:18px;line-height:1.55"><b>Small on purpose.</b> One small studio that builds slowly and with care.</span></li>
 </ol>
 </section>
 
 <section id="legal" style="max-width:1320px;margin:0 auto;padding:40px 40px 120px">
-<div style="background:#E8E3D7;border-radius:24px;padding:48px;display:flex;flex-wrap:wrap;gap:48px">
+<div data-reveal style="background:#E8E3D7;border-radius:24px;padding:48px;display:flex;flex-wrap:wrap;gap:48px">
 <div style="flex:1 1 300px;min-width:0"><h2 style="margin:0 0 12px;font-family:'Instrument Serif',serif;font-weight:400;font-size:52px;letter-spacing:-.02em">The small print</h2><p style="margin:0;color:#5A5C63;line-height:1.6">Written to be read, in plain English.</p></div>
 <div style="flex:2 1 520px;min-width:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px">
 <a href="privacy/mindguard/" style="background:#F2EFE7;border-radius:16px;padding:22px;display:flex;flex-direction:column;gap:8px"><span style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#5A5C63">MINDGUARD</span><span style="font-size:20px;font-weight:600">Privacy policy →</span></a>
@@ -205,7 +212,7 @@
 <div><p style="margin:0 0 16px;font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.1em;color:#A9A49A">WRITE TO US</p><a class="ul" href="mailto:onskteam@gmail.com" style="font-family:'Instrument Serif',serif;font-size:clamp(36px,5vw,72px);color:#F2EFE7">onskteam@gmail.com</a></div>
 <div style="display:flex;gap:28px;font-size:15px"><a href="privacy/mindguard/" style="color:#C9C4B8">Privacy</a><a href="#legal" style="color:#C9C4B8">Legal</a><a href="https://play.google.com/store" style="color:#C9C4B8">Google Play</a></div>
 </div>
-<svg viewBox="-6 -4 380 108" role="img" aria-label="Wickroot" style="display:block;width:100%;height:auto;margin-top:80px"><g class="flame"><path d="M44 2 C50 10 53 15 53 21 C53 27 49 30 44 30 C39 30 35 27 35 21 C35 15 38 10 44 2 Z" fill="#5C8BFF"></path></g><g stroke="#F2EFE7" stroke-width="10" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M6 34 C11 50 17 66 24 78 C30 66 37 54 44 46 C51 54 58 66 64 78 C71 66 77 50 82 34"></path><path d="M100 46 V78"></path><path d="M145.3 49.7 A16 16 0 1 0 145.3 72.3"></path><path d="M166 30 V78 M168 64 L186 44 M174 58 L188 78"></path><path d="M210 44 V78 M210 60 C210 50 218 44 230 45"></path><circle cx="260" cy="61" r="16"></circle><circle cx="310" cy="61" r="16"></circle><path d="M350 34 V68 C350 75 354 78 362 78 M340 46 H362"></path></g><circle cx="100" cy="31" r="6.5" fill="#F2EFE7"></circle><path d="M24 78 C24 86 20 90 12 95 M24 78 C25 87 30 91 36 95 M64 78 C63 87 58 91 52 95 M64 78 C64 86 68 90 76 95" stroke="#F2EFE7" stroke-width="4.5" fill="none" stroke-linecap="round"></path></svg>
+<svg class="foot-logo" viewBox="-6 -4 380 108" role="img" aria-label="Wickroot" style="display:block;width:100%;height:auto;margin-top:80px"><g class="flame"><path d="M44 2 C50 10 53 15 53 21 C53 27 49 30 44 30 C39 30 35 27 35 21 C35 15 38 10 44 2 Z" fill="#5C8BFF"></path></g><g stroke="#F2EFE7" stroke-width="10" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M6 34 C11 50 17 66 24 78 C30 66 37 54 44 46 C51 54 58 66 64 78 C71 66 77 50 82 34"></path><path d="M100 46 V78"></path><path d="M145.3 49.7 A16 16 0 1 0 145.3 72.3"></path><path d="M166 30 V78 M168 64 L186 44 M174 58 L188 78"></path><path d="M210 44 V78 M210 60 C210 50 218 44 230 45"></path><circle cx="260" cy="61" r="16"></circle><circle cx="310" cy="61" r="16"></circle><path d="M350 34 V68 C350 75 354 78 362 78 M340 46 H362"></path></g><circle cx="100" cy="31" r="6.5" fill="#F2EFE7"></circle><path d="M24 78 C24 86 20 90 12 95 M24 78 C25 87 30 91 36 95 M64 78 C63 87 58 91 52 95 M64 78 C64 86 68 90 76 95" stroke="#F2EFE7" stroke-width="4.5" fill="none" stroke-linecap="round"></path></svg>
 <p style="margin:32px 0 0;color:#A9A49A;font-size:14px">© 2026 Wickroot</p>
 </div>
 </footer>
@@ -234,5 +241,9 @@ document.querySelectorAll('.fan').forEach(function (fan) {
   fan.addEventListener('mouseleave', function () { fan.querySelectorAll('.card').forEach(function (c) { delete c.dataset.wait; }); });
 });
 </script>
+<script src="assets/js/gsap.min.js"></script>
+<script src="assets/js/ScrollTrigger.min.js"></script>
+<script src="assets/js/lenis.min.js"></script>
+<script src="assets/js/motion.js"></script>
 </body>
 </html>
