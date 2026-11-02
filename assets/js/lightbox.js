@@ -1,7 +1,8 @@
-// galerie: kliknutí na snímek otevře prohlížeč s popiskem, šipkami, náhledy a swipem
+// galerie: snímek se z dlaždice zvětší přes celou obrazovku a při zavření se do ní vrátí
 (function () {
   var links = Array.prototype.slice.call(document.querySelectorAll('.gal a'));
   if (!links.length || typeof HTMLDialogElement !== 'function') return;
+  var still = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   var items = links.map(function (a) {
     var img = a.querySelector('img'), cap = a.querySelector('span');
@@ -10,86 +11,113 @@
 
   var dlg = document.createElement('dialog');
   dlg.className = 'lb';
-  dlg.setAttribute('aria-label', 'Image viewer');
-  dlg.setAttribute('data-lenis-prevent', '');
   dlg.tabIndex = -1;
+  dlg.setAttribute('aria-label', 'Screenshots from The Last Mosswarden');
+  dlg.setAttribute('data-lenis-prevent', '');
   dlg.innerHTML =
-    '<div class="lb-top"><p class="lb-count" aria-live="polite"></p>' +
-    '<button class="lb-btn lb-close" type="button" aria-label="Close">×</button></div>' +
-    '<figure class="lb-stage"><img class="lb-img" alt=""><figcaption class="lb-cap"></figcaption></figure>' +
-    '<button class="lb-btn lb-prev" type="button" aria-label="Previous image">←</button>' +
-    '<button class="lb-btn lb-next" type="button" aria-label="Next image">→</button>' +
-    '<div class="lb-thumbs"></div>';
+    '<div class="lb-bar"><p class="lb-count" aria-live="polite"></p><div class="lb-nav">' +
+    '<button class="ul lb-prev" type="button">← Prev</button>' +
+    '<button class="ul lb-next" type="button">Next →</button>' +
+    '<button class="ul lb-close" type="button">Close</button></div></div>' +
+    '<div class="lb-stage"><img class="lb-img" alt=""></div>' +
+    '<div class="lb-foot"><p class="lb-cap"></p><p class="lb-hint">← → to browse · Esc to close</p></div>';
   document.body.appendChild(dlg);
 
   var img = dlg.querySelector('.lb-img'), cap = dlg.querySelector('.lb-cap'),
       count = dlg.querySelector('.lb-count'), stage = dlg.querySelector('.lb-stage'),
-      thumbs = dlg.querySelector('.lb-thumbs'), current = 0, opener = null;
-
-  items.forEach(function (it, i) {
-    var b = document.createElement('button');
-    b.type = 'button';
-    b.className = 'lb-thumb';
-    b.setAttribute('aria-label', it.cap || it.alt);
-    b.innerHTML = '<img src="' + it.src + '" alt="" loading="lazy">';
-    b.addEventListener('click', function () { show(i); });
-    thumbs.appendChild(b);
-  });
+      current = 0, busy = false;
 
   function pad(n) { return (n < 10 ? '0' : '') + n; }
 
-  // dir: -1 doleva, 1 doprava, 0 bez posunu (otevření, klik na náhled)
-  function show(i, dir) {
-    current = (i + items.length) % items.length;
-    var it = items[current];
-    img.classList.remove('in');
-    img.style.setProperty('--dx', (dir || 0) * 48 + 'px');
-    img.onload = function () { requestAnimationFrame(function () { img.classList.add('in'); }); };
-    img.src = it.src;
-    img.alt = it.alt;
-    cap.textContent = it.cap;
-    count.textContent = pad(current + 1) + ' / ' + pad(items.length);
-    thumbs.querySelectorAll('.lb-thumb').forEach(function (t, k) {
-      t.classList.toggle('on', k === current);
-      if (k === current) t.setAttribute('aria-current', 'true'); else t.removeAttribute('aria-current');
-    });
-    var on = thumbs.children[current];
-    if (on) on.scrollIntoView({ block: 'nearest', inline: 'center' });
-    [1, -1].forEach(function (d) { new Image().src = items[(current + d + items.length) % items.length].src; });
+  // transformace, která obrázek posadí přesně na místo dlaždice
+  function toTile(i) {
+    var t = links[i].getBoundingClientRect(), r = img.getBoundingClientRect();
+    return 'translate(' + (t.left - r.left) + 'px,' + (t.top - r.top) + 'px) scale(' + (t.width / r.width) + ',' + (t.height / r.height) + ')';
   }
 
-  function open(i, link) {
-    opener = link;
+  function fill(i) {
+    var it = items[i];
+    count.textContent = pad(i + 1) + ' / ' + pad(items.length);
+    cap.textContent = it.cap;
+    img.alt = it.alt;
+    [1, -1].forEach(function (d) { new Image().src = items[(i + d + items.length) % items.length].src; });
+  }
+
+  function open(i) {
+    current = i;
+    fill(i);
     document.documentElement.classList.add('lb-open');
     if (window.wickLenis) window.wickLenis.stop();
+    img.style.transition = 'none';
+    img.style.opacity = '0';
+    img.onload = function () {
+      img.onload = null;
+      if (!still) img.style.transform = toTile(i);
+      img.style.opacity = '1';
+      img.getBoundingClientRect();
+      img.style.transition = '';
+      img.style.transform = '';
+    };
+    img.src = items[i].src;
+    dlg.classList.remove('out');
     dlg.showModal();
-    dlg.focus(); // fokus na okno, ne na křížek
-    show(i, 0);
+    dlg.focus();
+  }
+
+  function close() {
+    if (busy || !dlg.open) return;
+    busy = true;
+    dlg.classList.add('out');
+    if (!still) img.style.transform = toTile(current);
+    setTimeout(function () {
+      dlg.close();
+      busy = false;
+    }, still ? 0 : 520);
+  }
+
+  function go(d) {
+    if (busy) return;
+    busy = true;
+    current = (current + d + items.length) % items.length;
+    img.style.setProperty('--dx', d * -40 + 'px');
+    img.classList.add('swap');
+    setTimeout(function () {
+      img.onload = function () {
+        img.onload = null;
+        img.style.setProperty('--dx', d * 40 + 'px');
+        img.getBoundingClientRect();
+        img.classList.remove('swap');
+        busy = false;
+      };
+      img.src = items[current].src;
+      fill(current);
+    }, still ? 0 : 200);
   }
 
   dlg.addEventListener('close', function () {
     document.documentElement.classList.remove('lb-open');
     if (window.wickLenis) window.wickLenis.start();
-    if (opener) opener.focus();
+    links[current].focus({ preventScroll: true });
   });
+  dlg.addEventListener('cancel', function (e) { e.preventDefault(); close(); });
 
   links.forEach(function (a, i) {
     a.addEventListener('click', function (e) {
       if (e.metaKey || e.ctrlKey || e.shiftKey || e.button !== 0) return;
       e.preventDefault();
-      open(i, a);
+      open(i);
     });
   });
 
-  dlg.querySelector('.lb-close').addEventListener('click', function () { dlg.close(); });
-  dlg.querySelector('.lb-prev').addEventListener('click', function () { show(current - 1, -1); });
-  dlg.querySelector('.lb-next').addEventListener('click', function () { show(current + 1, 1); });
+  dlg.querySelector('.lb-close').addEventListener('click', close);
+  dlg.querySelector('.lb-prev').addEventListener('click', function () { go(-1); });
+  dlg.querySelector('.lb-next').addEventListener('click', function () { go(1); });
+  img.addEventListener('click', function () { go(1); });
+  stage.addEventListener('click', function (e) { if (e.target === stage) close(); });
   dlg.addEventListener('keydown', function (e) {
-    if (e.key === 'ArrowLeft') { e.preventDefault(); show(current - 1, -1); }
-    if (e.key === 'ArrowRight') { e.preventDefault(); show(current + 1, 1); }
+    if (e.key === 'ArrowLeft') { e.preventDefault(); go(-1); }
+    if (e.key === 'ArrowRight') { e.preventDefault(); go(1); }
   });
-  // klik vedle obrázku zavře
-  dlg.addEventListener('click', function (e) { if (e.target === dlg || e.target === stage) dlg.close(); });
 
   // swipe na dotykových displejích
   var x0 = null;
@@ -98,6 +126,6 @@
     if (x0 === null) return;
     var dx = e.clientX - x0;
     x0 = null;
-    if (Math.abs(dx) > 50) show(current + (dx < 0 ? 1 : -1), dx < 0 ? 1 : -1);
+    if (Math.abs(dx) > 50) go(dx < 0 ? 1 : -1);
   });
 })();
