@@ -12,6 +12,7 @@
     smoothWheel: true
   });
   lenis.on('scroll', ScrollTrigger.update);
+  window.wickLenis = lenis; // galerie ho při otevření prohlížeče zastaví
   gsap.ticker.add(function (time) { lenis.raf(time * 1000); });
   gsap.ticker.lagSmoothing(0);
 
