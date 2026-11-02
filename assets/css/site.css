@@ -112,8 +112,8 @@ a{color:#15161A;text-decoration:none}a:hover{color:#2B55E6}
 .prow:hover .peek{opacity:1;transform:translateY(-50%) rotate(-3deg)}
 .prow .go{transition:transform .35s,background .35s,color .35s}
 .prow:hover .go{transform:rotate(-45deg);background:#15161A;color:#F2EFE7}
-.fan .card{position:absolute;width:220px;border-radius:26px;border:5px solid #15161A;cursor:pointer;transition:transform .55s cubic-bezier(.2,.7,.2,1),box-shadow .55s,filter .55s}
-.fan .pc{z-index:3;transform:none;box-shadow:0 30px 60px -20px rgba(21,22,26,.45)}
+.fan .card{position:absolute;width:220px;cursor:pointer;transition:transform .55s cubic-bezier(.2,.7,.2,1),box-shadow .55s,filter .55s}
+.fan .pc{z-index:3;transform:none;box-shadow:var(--bezel),0 30px 60px -20px rgba(21,22,26,.45)}
 .fan .pl{z-index:1;transform:translateX(-80px) rotate(-7deg) scale(.91);filter:brightness(.97)}
 .fan .pr{z-index:1;transform:translateX(80px) rotate(7deg) scale(.91);filter:brightness(.97)}
 .fan:hover .pl{transform:translateX(-120px) rotate(-10deg) scale(.91)}
@@ -123,7 +123,15 @@ a{color:#15161A;text-decoration:none}a:hover{color:#2B55E6}
 .fan .card.pc{z-index:3}
 .shots{display:flex;gap:18px;align-items:flex-start}
 .shot{transition:transform .5s cubic-bezier(.2,.7,.2,1),box-shadow .5s}
-.shot:hover{transform:translateY(-14px) rotate(-1.5deg);box-shadow:0 34px 60px -24px rgba(21,22,26,.5)}
+.shot:hover{transform:translateY(-14px) rotate(-1.5deg);box-shadow:var(--bezel),0 34px 60px -24px rgba(21,22,26,.5)}
+/* moderní telefon: tenký kovový lem, výřez kamery, boční tlačítko */
+.phone{--r:40px;--p:6px;--cam:9px;--bezel:inset 0 0 0 1px rgba(255,255,255,.14),inset 0 0 0 2.5px #08090b;position:relative;padding:var(--p);border-radius:var(--r);background:linear-gradient(150deg,#5a5e69 0%,#1b1c21 18%,#0c0d10 55%,#24262d 82%,#4a4e58 100%);box-shadow:var(--bezel),0 2px 4px rgba(21,22,26,.25),0 28px 50px -22px rgba(21,22,26,.55)}
+.phone img{display:block;width:100%;border-radius:calc(var(--r) - var(--p))}
+.phone::before{content:"";position:absolute;z-index:1;top:calc(var(--p) + var(--cam));left:50%;width:var(--cam);height:var(--cam);margin-left:calc(var(--cam) / -2);border-radius:50%;background:#050506;box-shadow:inset 0 0 0 1.5px #23252c,0 0 0 2px rgba(5,5,6,.35)}
+.phone::after{content:"";position:absolute;right:-2px;top:22%;width:3px;height:12%;border-radius:0 3px 3px 0;background:linear-gradient(#3a3d45,#1b1c21)}
+.shots .phone{--r:30px;--p:5px;--cam:7px}
+/* screenshoty bez stavového řádku dostanou nahoře proužek v barvě obrazovky, v něm sedí kamera */
+.fan .phone img{border-top:24px solid var(--screen,#000)}
 .bob{animation:bob 3.2s ease-in-out infinite}
 @keyframes bob{50%{transform:translateY(-10px)}}
 .fig img{transition:transform 1.2s cubic-bezier(.2,.7,.2,1)}
