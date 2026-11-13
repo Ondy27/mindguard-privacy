@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Medlatina – lékařská latina na zápočet · Wickroot</title>
+<meta name="description" content="Appka na lékařskou latinu pro studenty medicíny: skloňování, předložky a anatomické termíny v krátkých lekcích. Připravujeme pro zimní semestr 2027.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Medlatina – lékařská latina na zápočet">
+<meta property="og:description" content="Krátké lekce na mobil: deklinace, shoda, předložky a anatomické termíny s vysvětlením každé chyby.">
+<meta property="og:url" content="https://ondy27.github.io/mindguard-privacy/medlatina/">
+<meta name="theme-color" content="#007A73">
+<link rel="icon" href="../assets/icons/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../assets/icons/favicon_32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../assets/icons/favicon_180.png">
+<style>
+  :root {
+    --bg:#FFFFFF; --ink:#2D2A3E; --muted:#6B6680; --surface:#F6F4FB; --line:#E3E0EC;
+    --teal:#007A73; --teal-d:#005450; --teal-l:#E0F5F3; --teal-ink:#005E58;
+    --coral:#FF6B4A; --coral-ink:#C2410C; --bone:#FFF4E6;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg:#16141F; --ink:#F1EFF7; --muted:#A9A4BE; --surface:#211E2E; --line:#3A3550; --teal-l:#123A37; --teal-ink:#5FD3C8; --coral-ink:#FF8A65; }
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font-family: "Nunito", ui-rounded, "Segoe UI", system-ui, -apple-system, Roboto, sans-serif; line-height: 1.5; }
+  a { color: var(--teal-ink); }
+  .wrap { max-width: 980px; margin: 0 auto; padding: 0 16px; }
+  .studio { display: flex; justify-content: space-between; align-items: center; padding: 14px 0; font-size: 14px; font-weight: 700; color: var(--muted); border-bottom: 1px solid var(--line); }
+  .studio a { color: var(--muted); text-decoration: none; }
+  .studio a:hover { color: var(--ink); }
+  nav { display: flex; justify-content: space-between; align-items: center; padding: 20px 0; gap: 12px; }
+  .logo { display: flex; align-items: center; gap: 10px; font-weight: 900; font-size: 22px; }
+  .hero { display: grid; grid-template-columns: 1.2fr 1fr; gap: 32px; align-items: center; padding: 24px 0 48px; }
+  h1 { font-size: clamp(32px, 6vw, 52px); line-height: 1.05; margin: 0 0 16px; font-weight: 900; letter-spacing: -.01em; }
+  h1 em { font-style: normal; color: var(--teal-ink); }
+  .lead { font-size: 19px; font-weight: 600; color: var(--muted); margin: 0 0 24px; }
+  .btn { display: inline-flex; align-items: center; justify-content: center; min-height: 56px; padding: 0 24px; border-radius: 16px; background: var(--teal); color: #fff; font-weight: 900; font-size: 18px; text-decoration: none; border-bottom: 5px solid var(--teal-d); }
+  .btn:hover { filter: brightness(1.08); }
+  .btn:focus-visible { outline: 3px solid var(--coral); outline-offset: 3px; }
+  .note { margin-top: 12px; font-size: 14px; font-weight: 700; color: var(--muted); }
+  .card { background: var(--surface); border-radius: 24px; padding: 24px; display: flex; flex-direction: column; gap: 14px; }
+  .term { font-size: 26px; font-weight: 900; text-align: center; background: var(--bg); border-radius: 16px; padding: 18px; overflow-wrap: anywhere; }
+  .term b { color: var(--teal-ink); }
+  .term .hl { background: var(--teal); color: #fff; border-radius: 8px; padding: 0 6px; }
+  .feedback { background: var(--teal-l); border-radius: 16px; padding: 14px; font-weight: 600; font-size: 15px; }
+  .features { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; padding: 16px 0 48px; }
+  .feature { border: 2px solid var(--line); border-radius: 20px; padding: 18px; }
+  .feature h2 { font-size: 19px; margin: 0 0 6px; font-weight: 900; }
+  .feature p { margin: 0; color: var(--muted); font-weight: 600; }
+  .cta { background: var(--surface); border-radius: 28px; padding: 32px 24px; text-align: center; margin-bottom: 48px; }
+  .cta h2 { margin: 0 0 8px; font-size: 28px; font-weight: 900; }
+  footer { border-top: 2px solid var(--line); padding: 24px 0 40px; font-size: 14px; color: var(--muted); font-weight: 600; }
+  @media (max-width: 760px) { .hero, .features { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="studio"><a href="../">← Wickroot studio</a><span>Připravujeme</span></div>
+
+  <nav>
+    <span class="logo">
+      <svg width="44" height="32" viewBox="0 0 72 48" aria-hidden="true"><g fill="#FFF4E6" stroke="#2D2A3E" stroke-width="2.5"><circle cx="14" cy="16" r="8"/><circle cx="14" cy="32" r="8"/><circle cx="58" cy="16" r="8"/><circle cx="58" cy="32" r="8"/><rect x="16" y="17" width="40" height="14" rx="5"/></g><rect x="17.5" y="18.5" width="37" height="11" fill="#FFF4E6"/><circle cx="31" cy="23" r="2" fill="#2D2A3E"/><circle cx="41" cy="23" r="2" fill="#2D2A3E"/><path d="M32 26 q4 4 8 0" fill="none" stroke="#2D2A3E" stroke-width="1.8" stroke-linecap="round"/></svg>
+      Medlatina
+    </span>
+    <a href="#testovani" style="font-weight: 800;">Chci testovat</a>
+  </nav>
+
+  <section class="hero">
+    <div>
+      <h1>Lékařská latina na zápočet. <em>5 minut denně.</em></h1>
+      <p class="lead">Krátké lekce na mobil, které tě naučí termíny skloňovat, ne jen poznat: deklinace, shoda, předložky a anatomické názvy. S vysvětlením každé chyby.</p>
+      <a class="btn" href="#testovani">Chci být mezi prvními</a>
+      <p class="note">Připravujeme pro Android na zimní semestr 2027. Bez reklam a bez předplatného.</p>
+    </div>
+    <div class="card" aria-label="Ukázka cvičení">
+      <span style="font-weight: 900; color: var(--muted); font-size: 14px; text-transform: uppercase; letter-spacing: .06em;">Doplň koncovku · 2. pád</span>
+      <span style="font-weight: 900; font-size: 20px;">přední jáma lebeční</span>
+      <div class="term">foss<b>ae</b> crani<b>i</b> anterior<span class="hl">is</span></div>
+      <div class="feedback"><b>Správně!</b> anterior, -ius je III. deklinace → gen. sg. -is. <i>Cranii</i> je neshodný přívlastek, zůstává v genitivu.</div>
+    </div>
+  </section>
+
+  <section class="features" aria-label="Co appka umí">
+    <div class="feature"><h2>Skloňování z dat</h2><p>Cvičení se generují ze slovníku: doplň koncovku, vyber předložku a pád, poskládej termín, napiš ho celý.</p></div>
+    <div class="feature"><h2>Opakování v pravou chvíli</h2><p>Appka si pamatuje, co ti nejde, a vrací to dřív, než to zapomeneš. Zadej datum testu a naplánuje ti přípravu.</p></div>
+    <div class="feature"><h2>Režim zápočet</h2><p>Test s časomírou a orientační hranicí podle veřejného sylabu tvé fakulty. Uvidíš, kde ztrácíš body.</p></div>
+  </section>
+
+  <section class="cta" id="testovani">
+    <h2>Chceš appku testovat jako první?</h2>
+    <p class="lead" style="margin-bottom: 20px;">Testeři na jaře 2027 dostanou Premium zdarma. Napiš nám fakultu a ročník a ozveme se, až bude testovací verze.</p>
+    <a class="btn" href="mailto:onskteam@gmail.com?subject=Medlatina%20%E2%80%93%20chci%20testovat&amp;body=Fakulta%3A%20%0AObor%3A%20%0ARo%C4%8Dn%C3%ADk%3A%20">Napsat e-mail</a>
+  </section>
+
+  <footer>
+    <p>Medlatina je nezávislá studijní pomůcka, není spojená s žádnou fakultou ani univerzitou.</p>
+    <p><b>Osobní údaje:</b> Tato stránka nepoužívá cookies, analytiku ani externí písma. Pokud nám napíšeš e-mail, použijeme tvou adresu jen k informování o testování a vydání appky, nikomu ji nepředáme a smažeme ji nejpozději 3 měsíce po vydání. O výmaz můžeš kdykoli požádat na <a href="mailto:onskteam@gmail.com">onskteam@gmail.com</a>.</p>
+    <p>© 2026 Wickroot studio</p>
+  </footer>
+</div>
+</body>
+</html>
