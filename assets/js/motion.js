@@ -77,9 +77,9 @@
     });
   });
 
-  // Maturitko zůstane stát a tmavý panel Mosswardena přes něj přejede
+  // Medlatina zůstane stát a tmavý panel Mosswardena přes ni přejede
   mm.add('(min-width: 768px)', function () {
-    var under = document.querySelector('#maturitko'), over = document.querySelector('#mosswarden');
+    var under = document.querySelector('#medlatina'), over = document.querySelector('#mosswarden');
     gsap.timeline({
       scrollTrigger: { trigger: under, start: 'bottom bottom', endTrigger: over, end: 'top top', scrub: true, pin: true, pinSpacing: false }
     }).to(under, { scale: 0.92, autoAlpha: 0.25, ease: 'none' });

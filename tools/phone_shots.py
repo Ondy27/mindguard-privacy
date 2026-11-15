@@ -29,6 +29,9 @@ SHOTS = {
     "mat-path.jpg": (0, 0),
     "mat-lesson.jpg": (0, 0),
     "mat-summary.jpg": (0, 0),
+    "ml-home.jpg": (40, 68),
+    "ml-chapter.jpg": (40, 68),
+    "ml-lesson.jpg": (40, 68),
 }
 BAR = 36  # výška stavového řádku (px při šířce 540)
 NAV = 22  # spodní proužek s indikátorem gesta
