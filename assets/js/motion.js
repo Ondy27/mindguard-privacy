@@ -19,10 +19,17 @@
   // kotvy (#projects, #contact…) dojíždí stejně plynule
   document.querySelectorAll('a[href^="#"]').forEach(function (a) {
     a.addEventListener('click', function (e) {
-      var id = a.getAttribute('href'), target = id.length > 1 && document.querySelector(id);
+      var id = a.getAttribute('href');
+      if (id === '#' || id === '#top') {
+        e.preventDefault();
+        lenis.scrollTo(0, { duration: 2.2 });
+        history.replaceState(null, '', location.pathname);
+        return;
+      }
+      var target = document.querySelector(id);
       if (!target) return;
       e.preventDefault();
-      lenis.scrollTo(target, { offset: id === '#top' ? -200 : 0, duration: 2.2 });
+      lenis.scrollTo(target, { duration: 2.2 });
       history.replaceState(null, '', id);
     });
   });
@@ -117,7 +124,14 @@
     var heroPerch = function () {
       var h1 = document.querySelector('#top h1'), top = document.querySelector('#top'),
           box = docPos(top.parentNode.classList.contains('pin-spacer') ? top.parentNode : top);
-      return { x: box.x + h1.offsetLeft + h1.offsetWidth * 0.9, y: box.y + h1.offsetTop + h1.offsetHeight * 0.55 };
+      // za konec nejdelšího řádku nadpisu (ne přes text)
+      var r = document.createRange();
+      r.selectNodeContents(h1);
+      var textRight = r.getBoundingClientRect().right - h1.getBoundingClientRect().left;
+      return {
+        x: Math.min(box.x + h1.offsetLeft + textRight + 115, window.innerWidth - 60),
+        y: box.y + h1.offsetTop + h1.offsetHeight * 0.55
+      };
     };
 
     // jak je maskot nakloněný, záleží na rychlosti scrollu
